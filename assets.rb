@@ -89,13 +89,38 @@ class AssetsFileManager
     end
   end
   
-  # TODO => Support controller action
   def add_action
+    controller = File.new("#{Rails_App_Path}/app/controllers/#{@controller}_controller.rb")
+    temp_controller = Tempfile.new "#{@controller}_controller.rb"
+    action_existed = false
+    controller.each_line do |line|
+      action_existed = true if line.include?("def #{@action}")
+      if !action_existed && (line.include?('private') || line.include?('public'))  # replace it with regular expression
+        temp_controller << "  # GET /#{@controller}/#{@action}\n"
+        temp_controller << "  def #{@action}\n"
+        temp_controller << "  end\n\n"
+      end
+      
+      temp_controller << line
+    end
     
+    FileUtils.mv(temp_controller.path, controller.path)
+    puts "\033[32m Action Create\033[0m"
   end
   
+  # ONLY remove unmodified action
   def remove_action
+    controller = File.new("#{Rails_App_Path}/app/controllers/#{@controller}_controller.rb")
+    temp_controller = Tempfile.new "#{@controller}_controller.rb"
+    action_found = false
+    skipped = 0
+    controller.each_line do |line|
+      action_found = true if line.include?("# GET /#{@controller}/#{@action}\n")
+      (action_found && skipped < 3) ? skipped += 1 : temp_controller << line
+    end
     
+    FileUtils.mv(temp_controller.path, controller.path)
+    puts "\033[31m Action Removed\033[0m"
   end
   
   def add_route
@@ -118,12 +143,14 @@ class AssetsFileManager
       
       temp_routes << line
       if reached_scope && line.include?('collection do')
-        temp_routes << "      get #{@action}\n"
+        temp_routes << "      get '#{@action}'\n"
         reached_scope = false
         extended_routes = true
       end
     end
+    
     FileUtils.mv temp_routes.path, "#{Rails_App_Path}/config/routes.rb"
+    puts "\033[32m Route Create\033[0m"
   end
   
   def remove_route
@@ -132,7 +159,9 @@ class AssetsFileManager
     routes.each_line do |line|
       temp_routes << line unless line.include?("get '#{@action}'")
     end
+    
     FileUtils.mv temp_routes.path, "#{Rails_App_Path}/config/routes.rb"
+    puts "\033[31m Route Removed\033[0m"
   end
 end
 
