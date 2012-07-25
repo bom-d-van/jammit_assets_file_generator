@@ -1,0 +1,532 @@
+renderPhraseColorpackage_assets: off
+# 重要参数取消 asset 打包
+package_assets: off
+embed_assets: off
+compress_assets: off
+gzip_assets: off
+javascript_compressor: yui
+
+# 使用方式(参考)： http://documentcloud.github.com/jammit/
+javascripts:
+  # =================================================================
+  # Wando3 Basics
+  # =================================================================
+  # ext所必须库
+  ext_basic:
+    - public/javascripts/ext/ext-base-debug.js
+    - public/javascripts/ext/ext-all-debug.js
+    - public/javascripts/ext/ext-lang-zh_CN.js
+  
+  # ext拓展
+  wando_ext_basic:
+    - public/javascripts/wando/wando.js
+    - public/javascripts/ext/wando_ext/wando_ext.js
+    - public/javascripts/ext/wando_ext/dynamic_grid_js/dynamic_grid.js
+    - public/javascripts/ext/wando_ext/msg/msg.js
+    - public/javascripts/ext/wando_ext/query/query.js
+    - public/javascripts/ext/wando_ext/query/query_config.js
+    - public/javascripts/ext/wando_ext/icons/icons.js
+    - public/javascripts/ext/wando_ext/tbar/tbar.js
+    - public/javascripts/ext/wando_ext/callback/callback.js
+  
+  wando_toolbox:
+    - public/javascripts/ext/wando_ext/image/data_view_more.js
+    - public/javascripts/wando/global/toolbox/init.js
+    - public/javascripts/wando/global/toolbox/app_info.js
+      
+  wando_tree:
+    - public/javascripts/ext/wando_ext/tree/tree.js
+
+  # grid锁定表头
+  locking_grid_view:
+    - public/javascripts/ext/wando_ext/ext_ux/LockingGridView.js
+  
+  row_expander:
+    - public/javascripts/ext/wando_ext/ext_ux/row_expander.js
+  
+  # javascript拓展
+  js_extension:
+    - public/javascripts/javascript_extension/js_extension.js
+  
+  # jquery所必须库
+  jquery:
+    - public/javascripts/jquery/jquery.js
+  
+  # 动态导航所必须库(使用前必须先包含 :jquery)
+  acts_as_menu:
+    - public/javascripts/jquery/menu_js/hoverIntent.js
+    - public/javascripts/jquery/menu_js/superfish.js
+  
+  # 信息弹出窗口所必须库(使用前必须先包含 :jquery)
+  jqrowl:
+    - public/javascripts/jquery/jgrowl/jquery.jgrowl.js
+    #- public/javascripts/jquery/jgrowl/jquery_new.js
+
+  scheduler:
+    - public/javascripts/ext/scheduler/sch_all_debug.js
+    - public/javascripts/ext/scheduler/month_day_preset.js
+    - public/javascripts/ext/scheduler/spinner.js
+    - public/javascripts/ext/scheduler/spinner_field.js
+    - public/javascripts/ext/scheduler/color_combo.js
+
+  # =================================================================
+  # Wando3 Extensions
+  # =================================================================
+  autocomplete_lite:
+    - public/javascripts/ext/wando_ext/autocompleteLite/wando_autocompletelite.js
+    - public/javascripts/ext/wando_ext/autocompleteLite/autocompletelite.js
+    - public/javascripts/ext/wando_ext/autocompleteLite/json-min.js
+  
+  image_basic:
+    - public/javascripts/ext/wando_ext/image/file_upload_field.js
+  
+  renderer:
+    - public/javascripts/ext/wando_ext/renderer/renderer.js
+  
+  instant_search_combobox:
+    - public/javascripts/ext/wando_ext/instant_search_combox/instant_search_combox.js
+  
+  # limited_quantity_combobox:
+    # - public/javascripts/ext/wando_ext/instant_search_combox/instant_search_combox.js
+    # - public/javascripts/ext/wando_ext/limited_quantity_js/limited_quantity_combox.js
+  
+  grid_form:
+    - public/javascripts/ext/wando_ext/grid_form/grid_form.js
+  
+  size_table:
+    - public/javascripts/ext/wando_ext/size_table/size_table.js
+  
+  kindeditor:
+    - public/javascripts/kindeditor/kindeditor.js
+  # User: Mouse
+  # Comment: 添加login登录界面js文件
+  # date: 2011-79
+  login:
+    - public/javascripts/wando/login/login.js
+  # basic_data
+  basic_data_base:
+    - public/javascripts/ext/wando_ext/basic_data/Base.js
+  
+  basic_data_group:
+    - public/javascripts/ext/wando_ext/basic_data/group.js
+
+  basic_data_accessory_data:
+    - public/javascripts/ext/wando_ext/basic_data/accessory_data.js
+  
+  basic_data_order_item:
+    - public/javascripts/ext/wando_ext/basic_data/order_item.js
+    - public/javascripts/ext/wando_ext/basic_data/group.js
+  
+  basic_data_employee:
+    - public/javascripts/ext/wando_ext/basic_data/employee.js
+  
+  basic_data_template:
+    - public/javascripts/ext/wando_ext/basic_data/templates.js
+  
+  basic_data_unit:
+    - public/javascripts/ext/wando_ext/basic_data/unit.js
+
+  basic_data_basis:
+    - public/javascripts/ext/wando_ext/basic_data/bases.js
+  
+  basic_data_part_type:
+    - public/javascripts/ext/wando_ext/basic_data/part_type.js
+  
+  basic_data_variety:
+    - public/javascripts/ext/wando_ext/basic_data/variety.js
+  
+  basic_data_depot:
+    - public/javascripts/ext/wando_ext/basic_data/depot.js
+  
+  # basic_data_material_price:
+  #   - public/javascripts/wando/material_prices/index.js
+  
+  basic_data_yarn_standard:
+    - public/javascripts/ext/wando_ext/basic_data/yarn_standard.js
+  
+  basic_data_cp_type:
+    - public/javascripts/ext/wando_ext/basic_data/cp_type.js
+  
+  basic_data_customer:
+    - public/javascripts/ext/wando_ext/basic_data/customer.js
+  
+  basic_data_supplier:
+    - public/javascripts/ext/wando_ext/basic_data/supplier.js
+
+  basic_data_craft_info:
+    - public/javascripts/ext/wando_ext/basic_data/craft_info.js
+  
+  basic_data_material_manage:
+    - public/javascripts/ext/wando_ext/grid_form/grid_form.js
+    - public/javascripts/ext/wando_ext/instant_search_combox/instant_search_combox.js
+    - public/javascripts/wando/material/material_manage/yarn.js
+    - public/javascripts/wando/material/material_manage/material.js
+    - public/javascripts/wando/material/material_manage/embryo.js
+    - public/javascripts/wando/material/material_manage/accessory.js
+    - public/javascripts/wando/material/material_manage/cloth.js
+  
+  basic_data_material_data:
+    - public/javascripts/wando/material_data/material_data.js
+    - public/javascripts/wando/material_data/material_data_store.js
+
+  material_store:
+    - public/javascripts/wando/material/store/store.js
+
+  # =================================================================
+  # Wando3 Business Logic Js
+  # 命名约定:
+  # controller_action, 例子如manufacture_tasks_pending(index 除外,可直接写 controller)
+  # 某些共用不需要遵循这个约定，但是必须在这里添加特殊项: global
+  # ...
+  # =================================================================
+  manufacture_tasks_pending:
+    - public/javascripts/wando/manufacture_tasks/pending/pending.js
+    - public/javascripts/wando/manufacture_tasks/pending/edit_win.js
+    - public/javascripts/wando/manufacture_tasks/pending/mt_panel.js
+    - public/javascripts/wando/manufacture_tasks/pending/fabric_panel.js
+    - public/javascripts/wando/manufacture_tasks/pending/neck_panel.js
+    - public/javascripts/wando/manufacture_tasks/pending/list_win.js
+    - public/javascripts/wando/manufacture_tasks/pending/craft_calculator_win.js
+    - public/javascripts/wando/manufacture_tasks/pending/craft_formula_list_win.js
+  
+  preprocess_orders_preprocessing:
+    - public/javascripts/wando/preprocess_orders/preprocessing/preprocessing.js
+    - public/javascripts/wando/preprocess_orders/preprocessing/list_preprocess_order_tab.js
+    - public/javascripts/wando/preprocess_orders/preprocessing/make_preprocess_tab.js
+    - public/javascripts/wando/preprocess_orders/preprocessing/select_mt.js
+
+  manufacture_tasks_weaving:
+    - public/javascripts/wando/weave_orders/index/index.js
+    - public/javascripts/wando/weave_orders/index/weaving_task.js
+    - public/javascripts/wando/weave_orders/index/weaving_order.js
+    - public/javascripts/wando/weave_orders/index/weave_orders_list.js
+    - public/javascripts/wando/global/assign_factory.js
+    - public/javascripts/wando/global/print_plate/select_print_template.js
+
+  weaving_receipts:
+    - public/javascripts/wando/weave_orders/index/weaving_receipts.js
+    - public/javascripts/wando/weave_orders/index/weaving_receipts_list.js
+  
+  manufacture_tasks_progress:
+    - public/javascripts/wando/manufacture_tasks/progress/progress.js
+
+  process_orders_processing:
+    - public/javascripts/wando/process_orders/processing/processing.js
+    - public/javascripts/wando/process_orders/processing/list_process_order_tab.js
+    - public/javascripts/wando/process_orders/processing/make_process_tab.js
+    - public/javascripts/wando/process_orders/processing/process_order_task.js
+    - public/javascripts/wando/process_orders/processing/update_finish_quantity_win.js
+    - public/javascripts/wando/process_orders/processing/processed_mt.js
+    - public/javascripts/wando/process_orders/processing/select_current_process.js
+    - public/javascripts/wando/global/print_plate/select_print_template.js
+    - public/javascripts/wando/global/assign_factory.js
+  
+  cutting_records:
+    - public/javascripts/ext/wando_ext/basic_data/order_item.js
+    - public/javascripts/wando/zhi_yi/workshop_task.js
+    - public/javascripts/wando/zhi_yi/cutting_record.js
+    - public/javascripts/ext/wando_ext/grid_form/grid_form.js
+    - public/javascripts/wando/zhi_yi/cutting_record_for_select.js
+  
+  cutting_receipts:
+    - public/javascripts/wando/cutting_receipts/cutting_receipt.js
+    - public/javascripts/wando/cutting_receipts/make_cutting_receipt_tab.js
+    - public/javascripts/wando/cutting_receipts/cutting_receipt_list_tab.js    
+    - public/javascripts/ext/wando_ext/basic_data/order_item.js
+    - public/javascripts/ext/wando_ext/grid_form/grid_form.js
+    
+  workshop_tasks:
+    - public/javascripts/wando/zhi_yi/cutting_record_for_select.js
+    - public/javascripts/wando/zhi_yi/workshop_task.js
+    - public/javascripts/ext/wando_ext/grid_form/grid_form.js
+  
+  workshop_reports:
+    - public/javascripts/wando/zhi_yi/cutting_record.js
+    - public/javascripts/wando/zhi_yi/workshop_task_for_select.js
+    - public/javascripts/wando/zhi_yi/workshop_report.js
+    - public/javascripts/ext/wando_ext/grid_form/grid_form.js
+  
+  yinhua_reports:
+    - public/javascripts/ext/wando_ext/basic_data/order_item.js
+    - public/javascripts/wando/zhi_yi/yinhua_report.js
+    - public/javascripts/ext/wando_ext/grid_form/grid_form.js
+  
+  xiuhua_reports:
+    - public/javascripts/ext/wando_ext/basic_data/order_item.js
+    - public/javascripts/wando/zhi_yi/xiuhua_report.js
+    - public/javascripts/ext/wando_ext/grid_form/grid_form.js
+  
+  arranging_reports:
+    - public/javascripts/ext/wando_ext/basic_data/order_item.js
+    - public/javascripts/wando/zhi_yi/arranging_report.js
+    - public/javascripts/ext/wando_ext/grid_form/grid_form.js
+  
+  order_items_clothing_progress:
+    - public/javascripts/wando/zhi_yi/production/clothing_progress.js
+  
+  global_accessory_assignment_win:
+    - public/javascripts/wando/global/accessory_assignment_win/ar_editor.js
+    - public/javascripts/wando/global/accessory_assignment_win/ar_list_grid.js
+    - public/javascripts/wando/global/accessory_assignment_win/poi_tree.js
+    - public/javascripts/wando/global/accessory_assignment_win/accessory_storage_grid.js
+    - public/javascripts/wando/global/accessory_assignment_win/aa_win.js
+  
+  puro_editor:
+    - public/javascripts/wando/purchase_orders/shares/material_list_grid.js
+    - public/javascripts/wando/purchase_orders/shares/puro_form_panel.js
+    - public/javascripts/wando/purchase_orders/shares/puroi_grid.js
+    - public/javascripts/wando/purchase_orders/shares/puro_editor.js
+  
+  purchase_orders_unpurchased_yr_list:
+    - public/javascripts/wando/purchase_orders/unpurchased_yr_list.js
+
+  purchase_orders_index:
+    - public/javascripts/wando/purchase_orders/index.js
+    - public/javascripts/wando/global/print_plate/edit_print_plate.js
+
+  global_parent_order_editor:
+    - public/javascripts/wando/sample_orders/so_for_chance_easy/parent_order_editor.js
+    - public/javascripts/wando/sample_orders/so_for_chance_easy/parent_order_form_panel.js
+    - public/javascripts/wando/sample_orders/so_for_chance_easy/parent_order_item_grid.js
+    - public/javascripts/wando/sample_orders/so_for_chance_easy/size_table_win.js
+    - public/javascripts/wando/sample_orders/so_for_chance_easy/po_image_panel.js
+
+    #- public/javascripts/wando/global/parent_order_editor/parent_order_editor.js
+    #- public/javascripts/wando/global/parent_order_editor/parent_order_form_panel.js
+    #- public/javascripts/wando/global/parent_order_editor/parent_order_item_grid.js
+    #- public/javascripts/wando/global/parent_order_editor/size_table_win.js
+    
+  so_list_panel:
+    - public/javascripts/wando/sample_orders/index.js
+    
+  list_sample_orders:
+    - public/javascripts/wando/sample_orders/list_sample_orders.js
+    
+  global_image_display_win:
+    - public/javascripts/wando/global/image_display_win.js
+    
+  global_cloth_data:
+    - public/javascripts/wando/global/cloth_datas/list_grid.js
+    - public/javascripts/wando/global/cloth_datas/edit_tab_panel.js
+    
+  global_cloth_data_select_win:
+    - public/javascripts/wando/global/cloth_datas/select_win.js
+    
+  global_cloth_data_list_win:
+    - public/javascripts/wando/global/cloth_datas/list_win.js
+    
+  role_groups_show_role_group:
+    - public/javascripts/wando/role_groups/show_role_groups/show_role_groups.js
+    - public/javascripts/wando/role_groups/show_role_groups/add_role_group.js
+    - public/javascripts/ext/wando_ext/grid_form/grid_form.js
+
+  role_groups_show_employees:
+    - public/javascripts/wando/role_groups/show_employees/employee.js
+
+  databases_list_databases:
+    - public/javascripts/wando/databases/list_databases/list_databases.js
+
+  other_inbound:
+    - public/javascripts/ext/wando_ext/grid_form/grid_form.js
+    - public/javascripts/wando/global/store_receipt/select_size_quantity.js
+    - public/javascripts/wando/in_store_receipts/other_inbound/other_inbound_selection.js
+    - public/javascripts/wando/in_store_receipts/other_inbound/other_inbound.js
+
+  other_outbound:
+    - public/javascripts/wando/global/store_receipt/size_quantity.js
+    - public/javascripts/wando/out_store_receipts/other_outbound/other_outbound_selection.js
+    - public/javascripts/wando/out_store_receipts/other_outbound/other_outbound.js
+
+
+  store_receipt_list:
+    - public/javascripts/wando/store_receipt/index.js
+
+  purchase_inbound:
+    - public/javascripts/wando/global/store_receipt/selection.js
+    - public/javascripts/wando/in_store_receipts/purchase_inbound/purchase_inbound.js
+
+  return_inbound:
+    - public/javascripts/wando/global/store_receipt/select_size_quantity.js
+    - public/javascripts/wando/global/store_receipt/size_quantity.js
+    - public/javascripts/wando/in_store_receipts/return_inbound/return_inbound_selection.js
+    - public/javascripts/wando/in_store_receipts/return_inbound/return_inbound.js
+
+  yarn_outbound:
+    - public/javascripts/wando/global/store_receipt/selection.js
+    - public/javascripts/wando/out_store_receipts/yarn_outbound/yarn_outbound.js
+
+  product_inbound:
+    - public/javascripts/wando/in_store_receipts/product_inbound/product_inbound.js
+    - public/javascripts/wando/global/store_receipt/selection.js    
+
+  embryo_inbound:
+    - public/javascripts/wando/global/store_receipt/selection.js
+    - public/javascripts/wando/in_store_receipts/embryo_inbound/embryo_inbound.js
+
+  embryo_outbound:
+    # - public/javascripts/wando/out_store_receipts/embryo_outbound/embryo_outbound_selection.js
+    - public/javascripts/wando/out_store_receipts/embryo_outbound/embryo_outbound.js
+
+  cloth_inbound:
+    - public/javascripts/wando/global/store_receipt/size_quantity.js
+    - public/javascripts/wando/global/store_receipt/selection.js
+    - public/javascripts/wando/in_store_receipts/cloth_inbound/cloth_inbound.js
+
+  protocloth_inbound:
+    - public/javascripts/wando/global/store_receipt/size_quantity.js
+    - public/javascripts/wando/in_store_receipts/protocloth_inbound/protocloth_inbound.js
+
+  cloth_outbound:
+    - public/javascripts/wando/global/store_receipt/size_quantity.js
+    - public/javascripts/wando/global/store_receipt/selection.js
+    - public/javascripts/wando/out_store_receipts/cloth_outbound/cloth_outbound.js 
+
+  cutting_outbound:
+    - public/javascripts/wando/global/store_receipt/size_quantity.js
+    - public/javascripts/wando/global/store_receipt/selection.js
+    - public/javascripts/wando/out_store_receipts/cutting_outbound/cutting_outbound.js 
+
+  workshop_outbound:
+    - public/javascripts/wando/global/store_receipt/size_quantity.js
+    - public/javascripts/wando/global/store_receipt/selection.js
+    - public/javascripts/wando/out_store_receipts/workshop_outbound/workshop_outbound.js 
+
+  outbound_list:
+    - public/javascripts/ext/wando_ext/tree/tree.js
+    - public/javascripts/wando/global/store_receipt/size_quantity.js
+    - public/javascripts/wando/global/store_receipt/selection.js
+    - public/javascripts/wando/out_store_receipts/outbound_list/outbound_list.js 
+
+
+  protocloth_outbound:
+    - public/javascripts/wando/out_store_receipts/protocloth_outbound/protocloth_outbound.js 
+    - public/javascripts/wando/global/store_receipt/selection.js
+
+  product_outbound:
+    - public/javascripts/ext/wando_ext/basic_data/customer.js
+    - public/javascripts/ext/wando_ext/grid_form/grid_form.js
+    - public/javascripts/wando/out_store_receipts/product_outbound/product_outbound.js
+  
+  preprocess_outbound:
+    - public/javascripts/wando/global/store_receipt/selection.js
+    - public/javascripts/ext/wando_ext/basic_data/customer.js
+    - public/javascripts/ext/wando_ext/grid_form/grid_form.js
+    - public/javascripts/wando/out_store_receipts/preprocess_outbound/preprocess_outbound.js
+  
+  accessory_outbound:
+    - public/javascripts/ext/wando_ext/basic_data/customer.js
+    - public/javascripts/ext/wando_ext/grid_form/grid_form.js
+    - public/javascripts/wando/out_store_receipts/accessory_outbound/accessory_outbound.js
+
+  orders_index:
+    - public/javascripts/wando/order/index.js
+  
+  order_item_list:
+    - public/javascripts/wando/order_items/index.js
+  
+  parent_order_items_shares:
+    - public/javascripts/wando/parent_order_items/shares/shares.js
+    - public/javascripts/wando/parent_order_items/shares/default_scheduler_panel.js
+
+  parent_order_items_pnp:
+    - public/javascripts/wando/parent_order_items/pnp/pnp_query_win.js
+    - public/javascripts/wando/parent_order_items/pnp/pnp_report_win.js
+    - public/javascripts/wando/parent_order_items/pnp/plan_statistics_win.js
+    - public/javascripts/wando/parent_order_items/pnp/pnp.js
+  
+  parent_order_items_plan:
+    - public/javascripts/wando/parent_order_items/plan/number_tree.js
+    - public/javascripts/wando/parent_order_items/plan/planEditor.js
+    - public/javascripts/wando/parent_order_items/plan/plan.js
+  
+  yarn_requirements_assigning:
+    - public/javascripts/wando/yarn_requirements/shares/dividing_win.js
+    - public/javascripts/wando/yarn_requirements/shares/yarn_storage_grid.js
+    - public/javascripts/wando/yarn_requirements/shares/assignment_info_win.js
+    - public/javascripts/wando/yarn_requirements/shares/assignment_win.js
+    - public/javascripts/wando/yarn_requirements/shares/assigner.js
+    
+  yarn_requirements_index:
+    - public/javascripts/wando/yarn_requirements/index/assoc_tree.js
+    - public/javascripts/wando/yarn_requirements/index/collection_grid.js
+    - public/javascripts/wando/yarn_requirements/index/purchasing_info_win.js
+    - public/javascripts/wando/yarn_requirements/index/index.js
+
+  yarn_requirements_conflicting:
+    - public/javascripts/wando/yarn_requirements/conflicting/yarn_tree.js
+    - public/javascripts/wando/yarn_requirements/conflicting/conflicted_collection_grid.js
+    - public/javascripts/wando/yarn_requirements/conflicting/conflicting.js
+
+  menus_list_menus:
+    - public/javascripts/wando/menus/list_menus/list_menus.js
+    - public/javascripts/wando/menus/list_menus/menus_win.js
+
+  grids_show_grid_datas:
+    - public/javascripts/wando/grids/show_grid_datas/show_grid_datas.js
+    
+  craft_formula_list_panel:
+    - public/javascripts/wando/craft_formulas/shares/list_panel.js
+
+  craft_formulas_list:
+    - public/javascripts/wando/craft_formulas/list.js
+    
+  craft_formula_editor_win:
+    - public/javascripts/wando/craft_formulas/shares/craft_formula_editor_win.js
+  
+  cloth_datas_index:
+    - public/javascripts/wando/cloth_datas/index.js
+
+  kindeditor_config:
+    - public/javascripts/kindeditor/kindeditor_config.js
+  
+stylesheets:
+  ext_common:
+    - public/stylesheets/ext/ext_css/ext-all.css
+    - public/stylesheets/button_icon/button_icon.css
+  
+  acts_as_menu:
+    - public/stylesheets/acts_as_menu-css/superfish.css
+    - public/stylesheets/acts_as_menu-css/menu_stylesheets.css
+  
+  jqrowl:
+    - public/stylesheets/jgrowl/jquery.jgrowl.css
+    
+  wando_toolbox:
+    - public/stylesheets/data_view/data_view.css
+    - public/stylesheets/data_view/detail_view.css
+  
+  autocompletelite:
+    - public/stylesheets/autocompleteLite/autocompletelite.css
+  
+  scheduler:
+    - public/stylesheets/scheduler/sch-all.css
+    - public/stylesheets/scheduler/phrases.css
+    - public/stylesheets/scheduler/lines-and-zones.css
+    - public/stylesheets/scheduler/tool-tip-tpl.css
+    - public/stylesheets/scheduler/spinner.css
+  
+  # printing & kindeditor : special for print module
+  kindeditor_css:
+    - public/javascripts/kindeditor/skins/default.css
+
+  printing:
+    - public/stylesheets/print/printing.css
+  
+  file_upload_field:
+    - public/stylesheets/ext/ext_css/file_upload_field.css
+  
+  login:
+    - public/stylesheets/login/login.css
+  
+  group_header:
+    - public/stylesheets/ext/ext_css/ColumnHeaderGroup.css
+  
+  locking_grid_view:
+    - public/stylesheets/scheduler/locking-grid-view.css
+  
+  parent_order_items_pnp:
+    - public/stylesheets/scheduler/lockingandgrouping.css
+
+  home:
+    - public/stylesheets/home/home.css
+
